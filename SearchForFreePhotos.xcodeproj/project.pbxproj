@@ -17,6 +17,7 @@
 		3276EBAC260E25970022287E /* PhotoSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EBAB260E25970022287E /* PhotoSize.swift */; };
 		3276EBAF260E2B070022287E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EBAE260E2B070022287E /* EndPoint.swift */; };
 		3276EBB3260E2C050022287E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EBB2260E2C050022287E /* API.swift */; };
+		3276EBB626111A000022287E /* PhotoFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EBB526111A000022287E /* PhotoFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3276EBAB260E25970022287E /* PhotoSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSize.swift; sourceTree = "<group>"; };
 		3276EBAE260E2B070022287E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		3276EBB2260E2C050022287E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3276EBB526111A000022287E /* PhotoFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				3276EBA5260E22AF0022287E /* PhotoFeedResult.swift */,
 				3276EBA8260E23890022287E /* Photo.swift */,
 				3276EBAB260E25970022287E /* PhotoSize.swift */,
+				3276EBB526111A000022287E /* PhotoFeed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				3276EBAC260E25970022287E /* PhotoSize.swift in Sources */,
 				3276EBA2260E1F430022287E /* HomeViewController.swift in Sources */,
 				3276EBA9260E23890022287E /* Photo.swift in Sources */,
+				3276EBB626111A000022287E /* PhotoFeed.swift in Sources */,
 				3276EBB3260E2C050022287E /* API.swift in Sources */,
 				3276EBAF260E2B070022287E /* EndPoint.swift in Sources */,
 			);
