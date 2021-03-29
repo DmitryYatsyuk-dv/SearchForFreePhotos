@@ -10,6 +10,8 @@
 		32083DEF26121CF7007C973E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083DEE26121CF7007C973E /* Result.swift */; };
 		32083DF226121E01007C973E /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083DF126121E01007C973E /* APIError.swift */; };
 		32083DF526122009007C973E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083DF426122009007C973E /* APIClient.swift */; };
+		32083DFA26124E92007C973E /* PexelsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083DF926124E92007C973E /* PexelsClient.swift */; };
+		32083DFD26125927007C973E /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32083DFC26125927007C973E /* PhotoListViewModel.swift */; };
 		3276EB7F260E1C220022287E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EB7E260E1C220022287E /* AppDelegate.swift */; };
 		3276EB81260E1C220022287E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EB80260E1C220022287E /* SceneDelegate.swift */; };
 		3276EB88260E1C230022287E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3276EB87260E1C230022287E /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		32083DEE26121CF7007C973E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		32083DF126121E01007C973E /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		32083DF426122009007C973E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		32083DF926124E92007C973E /* PexelsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelsClient.swift; sourceTree = "<group>"; };
+		32083DFC26125927007C973E /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		3276EB7B260E1C220022287E /* SearchForFreePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchForFreePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3276EB7E260E1C220022287E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3276EB80260E1C220022287E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		3276EB98260E1E690022287E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				32083DFC26125927007C973E /* PhotoListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				32083DEE26121CF7007C973E /* Result.swift */,
 				32083DF126121E01007C973E /* APIError.swift */,
 				32083DF426122009007C973E /* APIClient.swift */,
+				32083DF926124E92007C973E /* PexelsClient.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			files = (
 				3276EB7F260E1C220022287E /* AppDelegate.swift in Sources */,
 				3276EBA6260E22AF0022287E /* PhotoFeedResult.swift in Sources */,
+				32083DFA26124E92007C973E /* PexelsClient.swift in Sources */,
 				3276EB81260E1C220022287E /* SceneDelegate.swift in Sources */,
 				3276EBAC260E25970022287E /* PhotoSize.swift in Sources */,
 				3276EBA2260E1F430022287E /* HomeViewController.swift in Sources */,
@@ -220,6 +227,7 @@
 				3276EBAF260E2B070022287E /* EndPoint.swift in Sources */,
 				32083DF226121E01007C973E /* APIError.swift in Sources */,
 				32083DF526122009007C973E /* APIClient.swift in Sources */,
+				32083DFD26125927007C973E /* PhotoListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
