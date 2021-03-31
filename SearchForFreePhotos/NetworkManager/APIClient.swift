@@ -9,7 +9,6 @@ import Foundation
 
 protocol APIClient {
     var session: URLSession { get }
-    
     func fetch<T: Decodable>(with request: URLRequest,
                              decode: @escaping (Decodable) -> T?,
                              completion: @escaping (Result<T, APIError>) -> Void)
@@ -18,12 +17,14 @@ protocol APIClient {
 extension APIClient {
     typealias JSONTaskCompletionHandler = (Decodable?, APIError?) -> Void
     
-    private func decodingTask <T: Decodable>(with request: URLRequest, decodingType: T.Type, completion: @escaping JSONTaskCompletionHandler) -> URLSessionTask {
+    private func decodingTask<T: Decodable>(with request: URLRequest, decodingType: T.Type, completion: @escaping JSONTaskCompletionHandler) -> URLSessionTask {
         let task = session.dataTask(with: request) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(nil, .requestFailed)
+                print("DEBUG: request failed")
                 return
             }
+            
             if httpResponse.statusCode == 200 {
                 if let data = data {
                     do {
@@ -41,11 +42,11 @@ extension APIClient {
         }
         return task
     }
+    
     func fetch<T: Decodable>(with request: URLRequest,
                              decode: @escaping (Decodable) -> T?,
                              completion: @escaping (Result<T, APIError>) -> Void) {
-        let task = decodingTask(with: request,
-                                decodingType: T.self) { (json, error) in
+        let task = decodingTask(with: request, decodingType: T.self) { (json, error) in
             DispatchQueue.main.async {
                 guard let json = json else {
                     if let error = error {
@@ -55,6 +56,7 @@ extension APIClient {
                     }
                     return
                 }
+                
                 if let value = decode(json) {
                     completion(.success(value))
                 } else {
