@@ -18,7 +18,7 @@ class PhotoCell: UITableViewCell {
         return iv
     }()
     
-    lazy var photographer: UILabel = {
+    lazy var photographerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = label.font.withSize(16)
@@ -34,7 +34,7 @@ class PhotoCell: UITableViewCell {
         return tag
     }()
     
-    private lazy var BlurEffectView: UIVisualEffectView = {
+    private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,15 +52,50 @@ class PhotoCell: UITableViewCell {
     
     //MARK: - Configure
     func setupView() {
-        
+        [imageV, blurEffectView].forEach { v in
+            contentView.addSubview(v)
+        }
+        [photographerLabel, photographerTagLabel].forEach { v in
+            blurEffectView.contentView.addSubview(v)
+            
+        }
         
         setupConstraints()
     }
     
     func setupConstraints() {
-         
+        //image constraints
+        NSLayoutConstraint.activate([
+            imageV.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageV.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageV.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        // blur view effect
+        NSLayoutConstraint.activate([
+            blurEffectView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            blurEffectView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            blurEffectView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            blurEffectView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        // photographer label and tag
+        NSLayoutConstraint.activate([
+            photographerLabel.leadingAnchor.constraint(equalTo: blurEffectView.leadingAnchor,constant: 2),
+            photographerLabel.trailingAnchor.constraint(equalTo: blurEffectView.trailingAnchor,constant: -2),
+            photographerLabel.topAnchor.constraint(equalTo: blurEffectView.topAnchor,constant: 2),
+            photographerTagLabel.leadingAnchor.constraint(equalTo: blurEffectView.leadingAnchor,constant: 2),
+            photographerTagLabel.trailingAnchor.constraint(equalTo: blurEffectView.trailingAnchor,constant: -2),
+            photographerTagLabel.topAnchor.constraint(equalTo: photographerLabel.bottomAnchor,constant: 2),
+            photographerTagLabel.bottomAnchor.constraint(equalTo: blurEffectView.bottomAnchor,constant: -2),
+        ])
     }
     
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        onReuse()
+        imageV.image = nil
+    }
 }
  
