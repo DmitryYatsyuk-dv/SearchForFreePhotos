@@ -84,6 +84,20 @@ extension PhotoListView: UITableViewDataSource {
         cell?.photographerLabel.text = photo.photographer
         cell?.photographerTagLabel.text = photo.photographer_tag
         
+        if let url = URL(string: photo.source.landscape) {
+            let token = vm.loadImage(url: url) { (image) in
+                DispatchQueue.main.async {
+                    cell?.imageV.image = image
+                }
+            }
+            
+            cell?.onReuse = {
+                if let token = token {
+                    self.vm.cancel(token)
+                }
+            }
+        }
+ 
         
         return cell ?? UITableViewCell()
     }

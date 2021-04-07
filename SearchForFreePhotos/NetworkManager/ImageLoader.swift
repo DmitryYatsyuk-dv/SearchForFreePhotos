@@ -42,7 +42,7 @@ class ImageLoader {
         return uuid
     }
     
-    func cancelled(_ uuid: UUID) {
+    func cancel(_ uuid: UUID) {
         runningRequests[uuid]?.cancel()
         runningRequests.removeValue(forKey: uuid)
     }
