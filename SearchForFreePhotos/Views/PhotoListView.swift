@@ -12,6 +12,8 @@ protocol PhotoListItemDelegate: class {
 }
 
 class PhotoListView: UIView {
+    
+    let CELL_ID = "cellID"
     weak var delegate: PhotoListItemDelegate?
     
     lazy var vm: PhotoListViewModel = {
@@ -25,7 +27,7 @@ class PhotoListView: UIView {
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.delegate = self
         tv.dataSource = self
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: "cellID")
+        tv.register(PhotoCell.self, forCellReuseIdentifier: CELL_ID)
         return tv
     }()
     
@@ -52,7 +54,6 @@ class PhotoListView: UIView {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
-    
 }
 
 //MARK: - PhotoListItemDelegate
@@ -78,6 +79,12 @@ extension PhotoListView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as? PhotoCell
+        let photo = vm.getPhoto(at: indexPath.row)
+        cell?.photographerLabel.text = photo.photographer
+        cell?.photographerTagLabel.text = photo.photographer_tag
+        
+        
+        return cell ?? UITableViewCell()
     }
 }

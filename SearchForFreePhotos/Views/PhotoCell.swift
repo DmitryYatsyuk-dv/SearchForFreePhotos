@@ -12,9 +12,9 @@ class PhotoCell: UITableViewCell {
     
     lazy var imageV: UIImageView = {
         let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
     

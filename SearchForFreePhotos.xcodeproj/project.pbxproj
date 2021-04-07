@@ -25,6 +25,7 @@
 		3276EBB3260E2C050022287E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EBB2260E2C050022287E /* API.swift */; };
 		3276EBB626111A000022287E /* PhotoFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3276EBB526111A000022287E /* PhotoFeed.swift */; };
 		329A0FD42615CB57006E64EE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329A0FD32615CB57006E64EE /* PhotoCell.swift */; };
+		32F019E1261DA9F7000E0544 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F019E0261DA9F7000E0544 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		3276EBB2260E2C050022287E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3276EBB526111A000022287E /* PhotoFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeed.swift; sourceTree = "<group>"; };
 		329A0FD32615CB57006E64EE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		32F019E0261DA9F7000E0544 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				32083DF126121E01007C973E /* APIError.swift */,
 				32083DF426122009007C973E /* APIClient.swift */,
 				32083DF926124E92007C973E /* PexelsClient.swift */,
+				32F019E0261DA9F7000E0544 /* ImageLoader.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				32083DEF26121CF7007C973E /* Result.swift in Sources */,
 				3276EBB626111A000022287E /* PhotoFeed.swift in Sources */,
 				3276EBB3260E2C050022287E /* API.swift in Sources */,
+				32F019E1261DA9F7000E0544 /* ImageLoader.swift in Sources */,
 				3276EBAF260E2B070022287E /* EndPoint.swift in Sources */,
 				32083DF226121E01007C973E /* APIError.swift in Sources */,
 				32083DF526122009007C973E /* APIClient.swift in Sources */,
