@@ -48,6 +48,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController: PhotoListItemDelegate {
     func selectedPhoto(photo: Photo) {
         //launch detail vc here
+        let vc = DetailViewController()
+        vc.photo = photo
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .formSheet
+        present(vc, animated: true, completion: nil)
     }
 }
 

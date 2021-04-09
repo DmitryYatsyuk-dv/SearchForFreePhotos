@@ -75,6 +75,12 @@ extension PhotoListView: UITableViewDelegate {
         let photo = vm.getPhoto(at: indexPath.row)
         delegate?.selectedPhoto(photo: photo)
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == vm.count - 10 {
+            vm.loadPhotos()
+        }
+    }
 }
 
 //MARK: - UITableViewDataSource
