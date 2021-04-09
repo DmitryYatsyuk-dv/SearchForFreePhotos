@@ -36,7 +36,7 @@ final class PhotoListViewModel {
     
     func loadPhotos() {
         currentPage += 1
-        let feed = PhotoFeed.curated(currentPage: currentPage, perPage: 20)
+        let feed = PhotoFeed.curated(currentPage: currentPage, perPage: 10)
         pexelsClient.getPhotos(from: feed) {[weak self] (result) in
             guard let strongSelf = self else { return }
             
