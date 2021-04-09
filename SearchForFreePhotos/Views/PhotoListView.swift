@@ -70,6 +70,11 @@ extension PhotoListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photo = vm.getPhoto(at: indexPath.row)
+        delegate?.selectedPhoto(photo: photo)
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -84,7 +89,7 @@ extension PhotoListView: UITableViewDataSource {
         cell?.photographerLabel.text = photo.photographer
         cell?.photographerTagLabel.text = photo.photographer_tag
         
-        if let url = URL(string: photo.source.landscape) {
+        if let url = URL(string: photo.src.landscape) {
             let token = vm.loadImage(url: url) { (image) in
                 DispatchQueue.main.async {
                     cell?.imageV.image = image

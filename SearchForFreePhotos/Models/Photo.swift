@@ -14,5 +14,5 @@ struct Photo: Codable {
     var photographer_tag: String {
         return photographer_url.replacingOccurrences(of: "https://www.pexels.com/", with: "")
     }
-    var source: PhotoSize
+    var src: PhotoSize
 }

@@ -21,8 +21,9 @@ class PhotoCell: UITableViewCell {
     lazy var photographerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = label.font.withSize(16)
+        label.font = label.font.withSize(21)
         label.textColor = .white
+        label.textAlignment = .center
         return label
     }()
     
@@ -30,7 +31,8 @@ class PhotoCell: UITableViewCell {
         let tag = UILabel()
         tag.translatesAutoresizingMaskIntoConstraints = false
         tag.font = tag.font.withSize(14)
-        tag.textColor = .darkGray
+        tag.textColor = .lightGray
+        tag.textAlignment = .right
         return tag
     }()
     
