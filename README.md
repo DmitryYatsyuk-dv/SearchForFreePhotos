@@ -18,4 +18,4 @@
 ### Thank you so much for the material and help - © DevTechie.
 ---
 #### Quick viewing of the app:  
-<img width = "250" src = "https://github.com/DmitryYatsyuk-dv/SearchForFreePhotos/blob/main/SearchForFreePhotos/SupportingFiles/Assets.xcassets/FreePhotos.gif">
+<img width = "250" src = "https://github.com/DmitryYatsyuk-dv/SearchForFreePhotos/blob/main/SearchForFreePhotos/SupportingFiles/Assets.xcassets/FreeStockPhotos.gif">
